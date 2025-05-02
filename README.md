@@ -17,8 +17,8 @@ This notebook constructs a **simulation cloud matrix** by sweeping through a ran
 
 Here we implement the **Blade Element Momentum - Navier-Stokes (BEM-NS)** hybrid solver. By matching BEM results against interpolated NS simulations, the blade loading distribution is validated and adjusted to achieve dynamic moment balance.
 
-- Input: Interpolated matrix from `MBE-1`.
-- Output: Updated blade forces, torque, and local angle data consistent with physics-based modeling.
+- Input: CL and CD matrix from XFoil 2D NACA0012 data, considering both Reynolds number and twist.
+- Output: Updated blade forces, local angle data, to calculate driving torque and inertial torque consistent with physics-based modeling at 3 different ω values at 1.000, 1.260, and 1.335 (rad/s).
 
 ---
 
