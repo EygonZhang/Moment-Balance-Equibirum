@@ -2,7 +2,7 @@
 
 ## Module Overview
 
-This repository presents a modular workflow for analyzing the **moment balance equilibria** of tidal turbine blades, leveraging high-fidelity simulations, interpolation, BEM-based physical modeling, and machine learning validation.
+This repository presents a modular workflow for analyzing the **moment balance equilibria** (MBE) of tidal turbine blades, leveraging high-fidelity simulations, interpolation, BEM-based physical modeling, and machine learning validation. It is a Python module for analyzing and visualizing moment balance in fluid mechanics systems. It marries machine-learning with physics-based modeling to give you a no-nonsense, in-depth look at where—and why—your system actually sits in equilibrium.
 
 ### MBE-1: Simulation cloud matrix & interpolaion.ipynb
 
@@ -22,9 +22,9 @@ Here we implement the **Blade Element Momentum - Navier-Stokes (BEM-NS)** hybrid
 
 ---
 
-### MBE-3: Optimization & inverse design
+### MBE-3: Isocline-Attention validation.ipynb 
 
-Planned notebook for running **inverse blade design** and optimization based on moment equilibrium constraints using BEM-NS and ML-assisted gradients.
+This module fuses moment-balance isoclines with an attention weighting mechanism. The optimization is based on moment equilibrium constraints using BEM-NS and ML-assisted gradients.
 
 ---
 ### MBE-4: Traditional ML model trials.ipynb
