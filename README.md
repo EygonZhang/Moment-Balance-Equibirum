@@ -16,8 +16,6 @@ This notebook builds a **simulation matrix** by sweeping flow velocities and ang
 - **Input:** Raw CFD simulation data (e.g., 20×7 net moment matrix)  
 - **Output:** Interpolated torque maps ready for validation
 
----
-
 ### MBE-2: `BEM-NS results.ipynb`
 
 Implements a hybrid **Blade Element Momentum – Navier-Stokes (BEM-NS)** solver. It calculates driving torque and inertial torque analytically and matches them against NS-based net torque.
@@ -25,15 +23,11 @@ Implements a hybrid **Blade Element Momentum – Navier-Stokes (BEM-NS)** solver
 - **Input:** 2D CL/CD datasets from NACA0012 (via XFOIL), twist angles  
 - **Output:** Decomposed torques at three ω points (1.000, 1.260, 1.335 rad/s)
 
----
-
 ### MBE-3: `Isocline-Attention validation.ipynb`
 
 Will fuse torque isoclines with attention-weighted MLP to optimize blade design based on equilibrium lines.
 
 The feature augementation model is necessary to consider the non-linear terms (U∞·ω and ω^2)
-
----
 
 ### MBE-4: `Traditional ML model trials.ipynb`
 
@@ -59,11 +53,11 @@ Trains several ML models (e.g., SVR, ANN, Random Forest) to learn nonlinear torq
 
 ---
 
-## ⚙️ How to Run in Google Colab
+## How to Run in Google Colab
 
 All `.ipynb` notebooks in this repository are designed to be run directly in **Google Colab**—no local installation required.
 
-### 🟢 To get started:
+### To get started:
 
 1. Visit the GitHub repository:  
    [https://github.com/EygonZhang/Moment-Balance-Equibirum](https://github.com/EygonZhang/Moment-Balance-Equibirum)
@@ -78,9 +72,7 @@ All `.ipynb` notebooks in this repository are designed to be run directly in **G
 4. Run the cells from top to bottom.  
    All required Python packages will be installed dynamically within Colab using `pip install`.
 
-> 💡 *Typical setup time: <1 minute in Colab*
-
----
+> *Typical setup time: <1 minute in Colab*
 
 **Note**: If you would like to work locally instead of Colab:
 
@@ -95,18 +87,19 @@ cd Moment-Balance-Equibirum
 pip install numpy pandas matplotlib scikit-learn
 (Typical install time: <2 minutes on a standard laptop)
 
+---
 
 ## How to Use with Your Own Data
 
 1. Replace the sample Excel files (`MBE-1`, `MBE-2`) with your own net moment matrix and torque results from simulations or experiments. Make sure the formatting matches the structure used in the example data.
 
 2. To generate lift and drag coefficients customized to your blade geometry and twist distribution, please use our standalone BEM solver:  
-   👉 **[FX-BEMS (GitHub link)](https://github.com/EygonZhang/FX-BEMS)**  
+   **[FX-BEMS (GitHub link)](https://github.com/EygonZhang/FX-BEMS)**  
    This tool interfaces with **XFOIL version 6.99** (© 2000 Mark Drela & Harold Youngren, released under the GNU General Public License with no warranty). It computes 3D rotationally corrected lift and drag coefficients, and estimates the axial and tangential induction factors **a** and **a′**.
 
 3. Import the updated CL, CD, a, and a′ into `MBE-3` to retrain the isocline-based surrogate optimizer on your customized blade geometry.
 
 4. You can also feed your own data into `MBE-4` for model comparison using pre-trained regressors, including **Random Forest**, **MLP**, and **Random Gaussian**. This supports benchmarking between data-driven and physics-based methods.
 
-> 💡 All notebooks are modular and flexible—minimal editing is required to adapt them for new designs or operating conditions.
+> All notebooks are modular and flexible—minimal editing is required to adapt them for new designs or operating conditions.
 
