@@ -85,8 +85,8 @@ cd Moment-Balance-Equibirum
 
 3. Ensure Python 3.8+ is installed and run:
 pip install numpy pandas matplotlib scikit-learn
-(Typical install time: <2 minutes on a standard laptop)
 ```
+(Typical install time: <2 minutes on a standard laptop)
 ---
 
 ## How to Use with Your Own Data
